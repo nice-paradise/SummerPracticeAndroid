@@ -1,7 +1,7 @@
 package com.example.homework1
 
 fun main() {
-    val numbers = listOf(11, 21, 45 ,71, -2, 12)
+    val numbers = listOf<Int>()
     val pass = "NiceParadise29999!"
     println("\nTAsk1:")
     analyzeIntList(numbers)
@@ -12,16 +12,18 @@ fun main() {
 }
 
 fun analyzeIntList(list: List<Int>) {
+    if (list.isEmpty()) {
+        println("List is empty")
+        return
+    }
     var min = list[0]
     var max = list[0]
     var totalSum = 0
-    var chet = mutableListOf<Int>()
-    var nechet = mutableListOf<Int>()
+    var chet = 0
+    var nechet = 0
+
     for (num in list) {
         totalSum += num
-
-        if (list.isEmpty())
-            println("List is empty")
 
         if (num < min) {
             min = num
@@ -30,20 +32,19 @@ fun analyzeIntList(list: List<Int>) {
             max = num
         }
         if (num % 2 == 0) {
-            chet.add(num)
+            chet++
         } else {
-            nechet.add(num)
+            nechet++
         }
     }
 
-    val chetCount = chet.size
-    val nechetCount = nechet.size
+
 
     print("Minimal number: " + min + "\n" +
             "Maximal number: " + max + "\n" +
             "Sum of all numbers: " + totalSum + "\n" +
-            "Even count: " + chetCount + "\n" +
-            "Odd count: " + nechetCount + "\n"
+            "Even count: " + chet + "\n" +
+            "Odd count: " + nechet + "\n"
     )
 
 }
