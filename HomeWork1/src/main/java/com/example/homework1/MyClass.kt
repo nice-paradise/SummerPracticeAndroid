@@ -1,7 +1,7 @@
 package com.example.homework1
 
 fun main() {
-    val numbers = listOf<Int>()
+    val numbers = listOf<Int>(12, 34,3)
     val pass = "NiceParadise29999!"
     println("\nTAsk1:")
     analyzeIntList(numbers)
