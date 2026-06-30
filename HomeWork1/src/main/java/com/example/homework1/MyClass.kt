@@ -12,13 +12,16 @@ fun main() {
 }
 
 fun analyzeIntList(list: List<Int>) {
-    var min = 1000000
-    var max = -1000000
+    var min = list[0]
+    var max = list[0]
     var totalSum = 0
     var chet = mutableListOf<Int>()
     var nechet = mutableListOf<Int>()
     for (num in list) {
         totalSum += num
+
+        if (list.isEmpty())
+            println("List is empty")
 
         if (num < min) {
             min = num
